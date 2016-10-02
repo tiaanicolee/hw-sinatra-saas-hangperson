@@ -24,7 +24,7 @@ class HangpersonGame
   end
   
   def guess(letter)
-    if (letter == '') || !(letter =~ /[[:alpha:]]/) || (letter == nil)
+    if (letter == '') || !(letter =~ /[[:alpha:]]/) || (letter == nil) || letter.length > 1
       raise ArgumentError, "Guess must be a letter."
     end
     
