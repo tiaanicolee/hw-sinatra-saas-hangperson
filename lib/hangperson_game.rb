@@ -24,7 +24,7 @@ class HangpersonGame
   end
   
   def guess(letter)
-    if (letter == '') || !(letter =~ /[[:alpha:]]/) || (letter == nil) || letter.length > 1
+    if (letter == '') || !(letter =~ /[[:alpha:]]/) || (letter == nil)
       raise ArgumentError, "Guess must be a letter."
     end
     
@@ -48,7 +48,7 @@ class HangpersonGame
   def check_win_or_lose
     if word_with_guesses() == @word
       return :win
-    elsif (@guesses.length + @wrong_guesses.length) == 7
+    elsif @wrong_guesses.length >= 7
       return :lose
     else
       return :play
